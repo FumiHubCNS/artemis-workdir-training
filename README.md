@@ -1,1 +1,4 @@
-# artemis_training
+# artemis-workdir-training 
+
+このリポジトリはartemisをつかった解析のサンプルコードなどをおいておくリポジトリです。
+
