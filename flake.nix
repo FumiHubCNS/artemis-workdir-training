@@ -40,6 +40,10 @@
           shellHook = ''
             ${runtimeShellHook}
 
+            # Let ROOT/cling resolve headers referenced by ARTEMIS PCM files.
+            artemisIncludePath="$(artemis-config --incdir | tr ' ' ':')"
+            export ROOT_INCLUDE_PATH="$artemisIncludePath''${ROOT_INCLUDE_PATH:+:$ROOT_INCLUDE_PATH}"
+
             echo
             echo "ARTEMIS workdir:"
             echo "  $PWD"
