@@ -12,11 +12,11 @@
         "userImpl": "userImpl"
       },
       "locked": {
-        "lastModified": 1790175344,
-        "narHash": "sha256-492WBYtGHsko06TrBCun47KMBUEfoDtItBCuj9fePxA=",
+        "lastModified": 1790430480,
+        "narHash": "sha256-n23b74qnHIzanvX4uZATCRDRnXgcsgUC/svfMqWgG6Q=",
         "owner": "FumiHubCNS",
         "repo": "artemis-flake",
-        "rev": "4d4ea273cd5cc245fef3d7967a3c8d89d4b6d68d",
+        "rev": "eb7dfa28f16ded483862935dd1c6da4c244ff89b",
         "type": "github"
       },
       "original": {
@@ -347,16 +347,18 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1790361504,
-        "narHash": "sha256-7dZDc7YUsLkMH2GAKunEeSV1Z32Zk3ssnwxV6ei575k=",
-        "rev": "79b6d20e55596f80baa35cda2a334da8a1fbf1ea",
-        "type": "tarball",
-        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1079672.79b6d20e5559/nixexprs.tar.zst"
+        "lastModified": 1790323409,
+        "narHash": "sha256-VVTPf+Hyd5ebpjBMHmrLMSBIeW6ls48Bqtosj7CNKLA=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "e94cb152ed51bd6e24eb4a41f1460252beb52cd2",
+        "type": "github"
       },
       "original": {
-        "id": "nixpkgs",
-        "ref": "nixpkgs-unstable",
-        "type": "indirect"
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "redisSrc": {

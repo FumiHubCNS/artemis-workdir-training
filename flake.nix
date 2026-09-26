@@ -1,26 +1,50 @@
 {
-  description = "artemis execution environment";
+  description = "ARTEMIS workdir environment";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+
     artemis-flake = {
       url = "github:FumiHubCNS/artemis-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, flake-utils, artemis-flake }:
-    flake-utils.lib.eachDefaultSystem (system:
+  outputs = {
+    nixpkgs,
+    flake-utils,
+    artemis-flake,
+    ...
+  }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
       let
-        pkgs = import nixpkgs { inherit system; };
+        pkgs = import nixpkgs {
+          inherit system;
+        };
+
+        runtimePackages =
+          artemis-flake.lib.${system}.runtimePackages;
+
+        runtimeShellHook =
+          artemis-flake.lib.${system}.runtimeShellHook;
+
       in
       {
         devShells.default = pkgs.mkShell {
-          name = "my-artemis-project";
-          packages = [
-            artemis-flake.packages.${system}.artemis
-          ];
+          name = "training";
+
+          packages = runtimePackages;
+
+          shellHook = ''
+            ${runtimeShellHook}
+
+            echo
+            echo "ARTEMIS workdir:"
+            echo "  $PWD"
+            echo
+          '';
         };
       }
     );
