@@ -18,7 +18,7 @@
   
 
     // If you use http server
-    THttpServer *tht = new THttpServer("http:8888");
+    THttpServer *tht = new THttpServer("http:8090");
 
     // Resitor artemi(pow-like) command 
     TCatCmdFactory *cf = TCatCmdFactory::Instance();
