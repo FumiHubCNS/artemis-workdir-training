@@ -9,14 +9,18 @@
 result
 result-*
 
-build/
-**/build/
+build
+**/build
 
-output/
-**/output/
+unused
+**/unused
 
-unused/
-**/unused/
+# Input/output files
+rawdata
+**/rawdata
+
+output
+**/output
 
 # Histogram output files
 figs
