@@ -8,19 +8,12 @@
 # Build/generated files
 result
 result-*
-
 build
-**/build
-
 unused
-**/unused
 
 # Input/output files
 rawdata
-**/rawdata
-
 output
-**/output
 
 # Histogram output files
 figs
