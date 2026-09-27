@@ -1,0 +1,32 @@
+Anchor:
+  - &maxevt 100000
+  - &output output/sim/decay.root
+Processor:
+  - name: timer
+    type: art::TTimerProcessor
+##################################################################################################
+  - name: MyTRandomNumberEventStore
+    type: art::TRandomNumberEventStore
+    parameter:
+      Max: 1  # [Float_t] the maximum value
+      MaxLoop: *maxevt  # [Int_t] the maximum number of loop
+      Min: 0  # [Float_t] the minimum value
+      OutputCollection: dim1  # [TString] output name of random values
+      OutputTransparency: 1 # [Bool_t] Output is persistent if false (default)
+      Verbose: 1  # [Int_t] verbose level (default 1 : non quiet)
+##################################################################################################
+  - name: proc_threebody
+    type: art::TTutorialThreeBodyDecayProcessor
+    parameter:
+      BeamMomentum: 1000.0
+      Verbose: 0
+##################################################################################################
+  - name: MyTOutputTreeProcessor
+    type: art::TOutputTreeProcessor
+    parameter:
+      FileName: *output  # [TString] The name of output file
+      OutputTransparency: 0  # [Bool_t] Output is persistent if false (default)
+      SplitLevel: 0  # [Int_t] Split level of tree defined in TTree (default is changed to be 0)
+      TreeName: tree  # [TString] The name of output tree
+      Verbose: 1  # [Int_t] verbose level (default 1 : non quiet)
+##################################################################################################
