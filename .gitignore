@@ -1,6 +1,24 @@
-result
-output
+# Hidden file
+.*
 
+# Keep hidden files related to Git
+!.gitignore
+!.github/
+
+# Build/generated files
+result
+result-*
+
+build/
+**/build/
+
+output/
+**/output/
+
+unused/
+**/unused/
+
+# Histogram output files
 figs
 
 *.root
